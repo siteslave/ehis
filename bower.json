@@ -1,5 +1,5 @@
 {
-  "name": "iStocky",
+  "name": "eHIS",
   "version": "1.0.0",
   "authors": [
     "Satit Rianpit <siteslave@msn.com>"
@@ -7,11 +7,11 @@
   "description": "HOSxP Drug Inventory System",
   "main": "app/index.html",
   "keywords": [
-    "Inventory",
-    "Stock",
-    "HOSxP",
-    "Drug",
-    "Store"
+    "Health Care",
+    "eHIS",
+    "his",
+    "node-webkit",
+    "nodejs"
   ],
   "license": "MIT",
   "homepage": "http://his.mkh.go.th/ehis",

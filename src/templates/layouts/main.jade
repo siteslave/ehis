@@ -1,0 +1,163 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title iSotcky : Inventory System for HOSxP and HOSxP_PCU
+        link(href="../vendor/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+        link(href="../vendor/font-awesome/css/font-awesome.min.css", rel="stylesheet")
+        link(href="css/app.css", rel="stylesheet")
+
+        script(src="../vendor/jquery/dist/jquery.min.js")
+        script(src="../vendor/bootstrap/dist/js/bootstrap.min.js")
+
+        // angularjs
+        script(src="../vendor/angular/angular.min.js")
+        script(src="../vendor/angular-route/angular-route.min.js")
+        // application script
+        script(src="js/app.js")
+
+    body
+        nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+            .container-fluid
+                button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#bs-navbar-collapse")
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+            a.navbar-brand(href="#")
+                i.fa.fa-windows
+                | &nbsp;eHIS
+            .collapse.navbar-collapse#bs-navbar-collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href="index.html")
+                            i.fa.fa-home.fa-fw
+                            | &nbsp;หน้าหลัก
+                    li.dropdown
+                        a(href="#", data-toggle="dropdown").dropdown-toggle
+                            i.fa.fa-desktop.fa-fw
+                            | &nbsp;งานบริการ
+                            span.caret
+                        ul.dropdown-menu(role="menu")
+                            li
+                                a(href="settings.html")
+                                    i.fa.fa-fw.fa-desktop
+                                    | &nbsp;ทะเบียนรับบริการ
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-calendar
+                                    | &nbsp;ทะเบียนนัด
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-check-square-o
+                                    | &nbsp;คัดกรองเบาหวาน/ความดัน
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-share-alt
+                                    | &nbsp;งานระบาดวิทยา
+                            li.divider
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-ambulance
+                                    | &nbsp;ทะเบียนส่งต่อ (Refer)
+                    li.dropdown
+                        a(href="orders.html", data-toggle="dropdown").dropdown-toggle
+                            i.fa.fa-bars.fa-fw
+                            | &nbsp;ระบบบัญชีบริการ
+                            span.caret
+                        ul.dropdown-menu(role="menu")
+                            li
+                                a(href="villages.html")
+                                    i.fa.fa-fw.fa-home
+                                    | &nbsp;บัญชี 1 หมู่บ้าน/หลังคาเรือน/ประชากร
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-suitcase
+                                    | &nbsp;บัญชี 2 หญิงตั้งครรภ์และการดูแลหลังคลอด
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-camera
+                                    | &nbsp;บัญชี 3 เด็กแรกเกิด (0-11 เดือน 29 วัน)
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-envelope
+                                    | &nbsp;บัญชี 4 โภชนาการเด็ก (1-5 ปี 11 เดือน 29 วัน)
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-flag-checkered
+                                    | &nbsp;บัญชี 5 งานอนามัยโรงเรียน
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-line-chart
+                                    | &nbsp;บัญชี 6 หญิงวัยเจริญพันธุ์/วางแผนครอบครัว
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-institution
+                                    | &nbsp;บัญชี 7 งานสุขาภิบาล
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-user
+                                    | &nbsp;บัญชี 8 องค์ประกอบพื้นฐานของชุมชน
+                    li.dropdown
+                        a(href="#", data-toggle="dropdown").dropdown-toggle
+                            i.fa.fa-fw.fa-wrench &nbsp;
+                            | &nbsp;เครื่องมือ
+                            span.caret
+                        ul.dropdown-menu(role="menu")
+                            li
+                                a(href="settings.html")
+                                    i.fa.fa-fw.fa-gear
+                                    | &nbsp;กำหนดค่า
+                            li
+                                a(href="users.html")
+                                    i.fa.fa-fw.fa-user
+                                    | &nbsp;ผู้ใช้งาน
+                            li.divider
+                            li
+                                a(href="suppliers.html")
+                                    i.fa.fa-fw.fa-database
+                                    | &nbsp;คลังเวชภัณฑ์
+                            li
+                                a(href="products.html")
+                                    i.fa.fa-fw.fa-shopping-cart
+                                    | &nbsp;รายการค่าใช้จ่าย
+                            li
+                                a(href="products.html")
+                                    i.fa.fa-fw.fa-wheelchair
+                                    | &nbsp;สิทธิการรักษา
+                            li
+                                a(href="products.html")
+                                    i.fa.fa-fw.fa-share-alt
+                                    | &nbsp;แผนกให้บริการ
+                            li.divider
+                            li
+                                a(href="products.html")
+                                    i.fa.fa-fw.fa-file-text
+                                    | &nbsp;รายการ LAB
+
+                    li
+                        a(href="reports.html")
+                            i.fa.fa-fw.fa-print
+                            | &nbsp;รายงาน
+                ul.nav.navbar-nav.navbar-right
+                    li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown")
+                            i.fa.fa-fw.fa-cogs &nbsp;
+                            span.caret
+                            | &nbsp;
+                        ul.dropdown-menu(role="menu")
+                            li
+                                a(href="changePassword.html")
+                                    i.fa.fa-fw.fa-key
+                                    | &nbsp;เปลี่ยนรหัสผ่าน
+                            li
+                                a(href="login.html")
+                                    i.fa.fa-fw.fa-sign-out
+                                    | &nbsp;ออกจากระบบ
+
+        .container
+
+            block content

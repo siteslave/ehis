@@ -4,7 +4,7 @@
   "authors": [
     "Satit Rianpit <siteslave@msn.com>"
   ],
-  "description": "HOSxP Drug Inventory System",
+  "description": "Health Information System",
   "main": "app/index.html",
   "keywords": [
     "Health Care",

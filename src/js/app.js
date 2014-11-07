@@ -8,6 +8,7 @@ var path = require('path'),
 var eHIS = window.eHIS || {};
 // eHIS version
 eHIS.version = '1.0.0';
+eHIS.saltKey = "Fi'rpk[k],sklki8k,";
 // Application data path
 eHIS.appPath = gui.App.dataPath;
 // Set space for json file
@@ -25,7 +26,7 @@ if (!isExist) {
             user: 'root',
             password: ''
         },
-        icare: {
+        dc: {
             url: 'http://his.mkh.go.th:3000',
             private_key: '123456'
         }

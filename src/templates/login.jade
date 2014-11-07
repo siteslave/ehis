@@ -15,6 +15,12 @@ block content
                         | &nbsp; กรุณาลงชื่อเข้าใช้งานโปรแกรม
                 .panel-body
                     form#frmLogin(role="form", name="frmLogin")
+                       .alert.alert-warning.alert-dismissible(role="alert", ng-show="isFailed")
+                          button(type="button", data-dismiss="alert").close
+                              span(aria-hidden="true") &times;
+                              span.sr-only Close
+                          | ชื่อผู้ใช้งาน/รหัสผ่าน ไม่ถูกต้อง
+
                         .form-group
                            label(for="txtUsername") ชื่อผู้ใช้งาน
                            input#txtHost(type="text", ng-model="username", ng-required="true").form-control
@@ -25,7 +31,9 @@ block content
                 .panel-footer
                    button(type="button", ng-click="doLogin()", ng-disabled="frmLogin.$invalid").btn.btn-success
                      i.fa.fa-sign-in
-                     | &nbsp;เข้าใช้งาน
-                   button(type="button", ng-click="doExit()").btn.btn-danger.pull-right
-                    i.fa.fa-power-off
-                    | &nbsp;ปิดโปรแแกรม
+                     | &nbsp;เข้าใช้งานโปรแกรม
+                   .btn-group.pull-right
+                      a(href="connectionSetting.html", title="กำหนดค่าการเชื่อมต่อ").btn.btn-default
+                         i.fa.fa-cogs
+                      button(type="button", title="ปิดโปรแกรม", ng-click="doExit()").btn.btn-danger
+                         i.fa.fa-power-off

@@ -1,7 +1,7 @@
 {
   "name": "eHIS",
   "version": "1.0.0",
-  "description": "HOSxP Drug Inventory System",
+  "description": "Health Information System",
   "main": "app/index.html",
   "single-instance": true,
   "window": {

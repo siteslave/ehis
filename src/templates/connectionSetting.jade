@@ -45,14 +45,14 @@ block content
                      .col-sm-6.col-md-6.col-lg-6
                         .form-group
                            label(for="txtDCUrl") DC Url
-                           input#txtDCUrl(type="text", placeholder="http://his.mkh.go.th:8081", ng-model="dcUrl", ng-required="true").form-control
+                           input#txtDCUrl(type="text", placeholder="http://his.mkh.go.th:8081", ng-model="url", ng-required="true").form-control
                      .col-sm-6.col-md-6.col-lg-6
                         .form-group
                            label(for="txtDCPrivateKey") DC Private key
-                           input#txtDCPrivateKey(type="text", placeholder="0123456789", ng-model="dcPrivateKey", ng-required="true").form-control
+                           input#txtDCPrivateKey(type="text", placeholder="0123456789", ng-model="private_key", ng-required="true").form-control
 
             .panel-footer
-               button(type="button", ng-click="saveConnection()", ng-disabled="frmSetting.$invalid").btn.btn-success
+               button(type="button", ng-click="saveConnection()", ng-disabled="!frmSetting.$valid").btn.btn-success
                   i.fa.fa-save
                   | &nbsp;บันทึกข้อมูล
                a(href="login.html").btn.btn-default.pull-right

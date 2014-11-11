@@ -19,12 +19,20 @@ block content
                  .col-sm-9.col-md-9.col.lg-9
                    .form-group
                        label.control-label(for="slVilages") หมู่บ้าน &nbsp;
-                       select#slVilages.form-control(style="width: 250px;", ng-model="village", ui-select2="select2Options", ng-options="item.village_id as 'หมู่ ' + item.village_moo + ' ' + item.village_name for item in villages track by $index")
+                       select#slVilages.form-control(style="width: 260px;",
+                       ng-model="village",
+                       ui-select2="select2Options",
+                       ng-change="getHouse()")
+                           option(ng-repeat="item in villages", value="{{item.village_id}}") {{'หมู่ ' + item.village_moo + ' ' + item.village_name}}
                        | &nbsp;
                        button(type="button").btn.btn-sm.btn-success
                           i.fa.fa-check-square-o
                        label.control-label(for="slHouse") &nbsp; บ้านเลขที่ &nbsp;
-                       select#slHouse.form-control(style="width: 100px;",ng-model="house", ui-select2)
+                       select#slHouse.form-control(style="width: 100px;",
+                       ng-model="house",
+                       ui-select2="select2Options",
+                       ng-change="getPersonList()")
+                            option(ng-repeat="item in houses", value="{{item.house_id}}") {{item.address}}
                        | &nbsp;
                        button(type="button").btn.btn-sm.btn-success
                           i.fa.fa-check-square-o
@@ -61,8 +69,20 @@ block content
                       th สถานะ
                       th #
                 tbody
-                   tr
-                      td(colspan="11") ...
+                   tr(ng-repeat="p in person")
+                      td.text-center {{p.patient_hn}}
+                      td.text-center {{p.cid}}
+                      td.text-center {{p.pname}}
+                      td {{p.fname}} {{p.lname}}
+                      td.text-center {{p.birthdate | toThaiDate}}
+                      td.text-center {{p.birthdate | toFullAge}}
+                      td.text-center {{p.sex | toSex}}
+                      td.text-center {{p.house_position_name}}
+                      td.text-center {{p.typearea}}
+                      td.text-center {{p.discharge_name}}
+                      td.text-center
+                        button.btn.btn-sm.btn-success
+                            i.fa.fa-edit
         br
         nav
            ul.pagination

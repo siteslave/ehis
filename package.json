@@ -2,7 +2,7 @@
   "name": "eHIS",
   "version": "1.0.0",
   "description": "Health Information System",
-  "main": "app/index.html",
+  "main": "app/login.html",
   "single-instance": true,
   "window": {
     "show": false,

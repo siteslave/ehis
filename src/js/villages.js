@@ -18,26 +18,44 @@
         connection: config.db
     });
 
-    var App = angular.module('App', []);
+    var App = angular.module('App', ['ui.select2']);
 
     // Controller
-    App.controller('AppController', function ($scope) {
+    App.controller('MainController', function ($scope, DataFactory) {
+
+        //select2 setting
+        $scope.select2Options = {
+            allowClear: true
+        };
+        // get village list
+        DataFactory.getVillage()
+            .then(function (rows) {
+                $scope.villages = rows;
+                console.log(rows);
+            }, function (err) {
+                console.log(err);
+            });
+
+        $scope.$watch('village', function (oldValue, newValue) {
+           console.log(oldValue);
+           console.log(newValue);
+        });
 
     });
     // Factory
-    App.factory('AppFactory', function ($q) {
+    App.factory('DataFactory', function ($q) {
 
-        var appFactory = {};
+        var dataFactory = {};
         /**
          * Get village list
          * @returns array
          */
-        appFactory.getVillage = function () {
+        dataFactory.getVillage = function () {
             var q = $q.defer();
 
             knex('village')
-                .select('village_id', 'address_id', 'village_moo', 'village_name', 'village_code')
-                .orderBy('village_moo', 'DESC')
+                .select('village_id', 'address_id','village_moo','village_name', 'village_code')
+                .orderBy('village_moo')
                 .exec(function (err, rows) {
                     if (err) {
                         console.log(err);
@@ -50,7 +68,7 @@
             return q.promise;
         };
 
-        return appFactory;
+        return dataFactory;
     });
 
 })(window, window.angular);
